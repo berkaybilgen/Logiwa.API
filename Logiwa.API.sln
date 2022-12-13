@@ -5,6 +5,14 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logiwa.API", "Logiwa.API\Logiwa.API.csproj", "{3C3A9488-83F3-4B68-B372-542F9CE90AED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logiwa.Service", "Logiwa.Service\Logiwa.Service.csproj", "{3CAA29E0-F44E-4638-B3C3-11EE5061185E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logiwa.Repository", "Logiwa.Repository\Logiwa.Repository.csproj", "{63D13030-29E1-4B7B-A187-FA7D0911F402}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logiwa.Data", "Logiwa.Data\Logiwa.Data.csproj", "{5D8C02D9-2231-4D84-9CB3-18787B391D0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logiwa.Domain", "Logiwa.Domain\Logiwa.Domain.csproj", "{AD4ED098-6C29-49B6-A3EC-D7C18DB95811}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{3C3A9488-83F3-4B68-B372-542F9CE90AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C3A9488-83F3-4B68-B372-542F9CE90AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C3A9488-83F3-4B68-B372-542F9CE90AED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CAA29E0-F44E-4638-B3C3-11EE5061185E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CAA29E0-F44E-4638-B3C3-11EE5061185E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CAA29E0-F44E-4638-B3C3-11EE5061185E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CAA29E0-F44E-4638-B3C3-11EE5061185E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63D13030-29E1-4B7B-A187-FA7D0911F402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63D13030-29E1-4B7B-A187-FA7D0911F402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63D13030-29E1-4B7B-A187-FA7D0911F402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63D13030-29E1-4B7B-A187-FA7D0911F402}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D8C02D9-2231-4D84-9CB3-18787B391D0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D8C02D9-2231-4D84-9CB3-18787B391D0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D8C02D9-2231-4D84-9CB3-18787B391D0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D8C02D9-2231-4D84-9CB3-18787B391D0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD4ED098-6C29-49B6-A3EC-D7C18DB95811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD4ED098-6C29-49B6-A3EC-D7C18DB95811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD4ED098-6C29-49B6-A3EC-D7C18DB95811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD4ED098-6C29-49B6-A3EC-D7C18DB95811}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
