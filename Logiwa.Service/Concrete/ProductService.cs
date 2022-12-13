@@ -3,7 +3,6 @@ using Logiwa.Domain.Models;
 using Logiwa.Domain.Responses;
 using Logiwa.Repository.Abstract;
 using Logiwa.Service.Abstract;
-using System.Collections.Generic;
 
 namespace Logiwa.Service.Concrete
 {
@@ -134,11 +133,7 @@ namespace Logiwa.Service.Concrete
             return result;
         }
 
-        private async Task<bool> IsValidProduct(int productId)
-        {
-            return await _productRepository.IsValid(productId);
-        }
-
+        #region Private Methods
         private async Task<ValidationModel> ValidateProductModel(ProductModel product)
         {
             var validationResult = new ValidationModel();
@@ -188,5 +183,6 @@ namespace Logiwa.Service.Concrete
 
             return product;
         }
+        #endregion
     }
 }
