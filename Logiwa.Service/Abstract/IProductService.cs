@@ -10,5 +10,7 @@ namespace Logiwa.Service.Abstract
         Task<ServiceResult<bool>> Delete(int productId);
         Task<ServiceResult<IList<ProductModel>>> GetProducts();
         Task<ServiceResult<ProductModel>> GetById(int id);
+        Task<ServiceResult<IList<ProductModel>>> FilterByKeyword(string keyword);
+        Task<ServiceResult<IList<ProductModel>>> FilterStockQuantityRange(int minValue, int maxValue);
     }
 }

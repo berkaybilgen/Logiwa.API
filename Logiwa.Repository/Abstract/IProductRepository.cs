@@ -11,5 +11,7 @@ namespace Logiwa.Repository.Abstract
         Task<bool> IsValid(int productId);
         Task<IList<ProductModel>> GetProducts();
         Task<ProductModel> GetById(int id);
+        Task<IList<ProductModel>> FilterByKeyword(string keyword);
+        Task<IList<ProductModel>> FilterStockQuantityRange(int minValue, int maxValue);
     }
 }

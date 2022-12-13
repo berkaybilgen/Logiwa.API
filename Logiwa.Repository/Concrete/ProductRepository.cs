@@ -135,5 +135,51 @@ namespace Logiwa.Repository.Concrete
 
             return null;
         }
+
+        public async Task<IList<ProductModel>> FilterByKeyword(string keyword)
+        {
+            try
+            {
+                return await _dbContext.Products.Include(p => p.Category)
+                                                .Where(p => p.Name.Contains(keyword) || p.Description.Contains(keyword) || p.Category.Name.Contains(keyword))
+                                               .Select(p => new ProductModel
+                                               {
+                                                   Id = p.Id,
+                                                   Name = p.Name,
+                                                   Description = p.Description,
+                                                   CategoryId = p.CategoryId,
+                                                   StockQuantity = p.StockQuantity
+                                               }).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+            }
+
+            return null;
+        }
+
+        public async Task<IList<ProductModel>> FilterStockQuantityRange(int minValue, int maxValue)
+        {
+            try
+            {
+                return await _dbContext.Products
+                                                .Where(p => p.StockQuantity >= minValue && p.StockQuantity <= maxValue)
+                                               .Select(p => new ProductModel
+                                               {
+                                                   Id = p.Id,
+                                                   Name = p.Name,
+                                                   Description = p.Description,
+                                                   CategoryId = p.CategoryId,
+                                                   StockQuantity = p.StockQuantity
+                                               }).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+            }
+
+            return null;
+        }
     }
 }

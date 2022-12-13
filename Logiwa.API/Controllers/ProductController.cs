@@ -54,5 +54,21 @@ namespace Logiwa.API.Controllers
 
             return new JsonResult(result);
         }
+
+        [HttpGet("{keyword}")]
+        public async Task<IActionResult> FilterByKeyword([FromRoute] string keyword)
+        {
+            var result = await _productService.FilterByKeyword(keyword);
+
+            return new JsonResult(result);
+        }
+
+        [HttpGet("{minValue}/{maxValue}")]
+        public async Task<IActionResult> FilterStockQuantityRange([FromRoute] int minValue, [FromRoute] int maxValue)
+        {
+            var result = await _productService.FilterStockQuantityRange(minValue, maxValue);
+
+            return new JsonResult(result);
+        }
     }
 }

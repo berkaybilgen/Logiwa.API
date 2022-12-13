@@ -3,6 +3,7 @@ using Logiwa.Domain.Models;
 using Logiwa.Domain.Responses;
 using Logiwa.Repository.Abstract;
 using Logiwa.Service.Abstract;
+using System.Collections.Generic;
 
 namespace Logiwa.Service.Concrete
 {
@@ -93,6 +94,42 @@ namespace Logiwa.Service.Concrete
             }
 
             result.Data = await _productRepository.GetById(id);
+
+            return result;
+        }
+
+        public async Task<ServiceResult<IList<ProductModel>>> FilterByKeyword(string keyword)
+        {
+            var result = new ServiceResult<IList<ProductModel>>();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                result.AddError("Keyword parameter cannot be null or empty!");
+                return result;
+            }
+
+            if (keyword.Length < 3)
+            {
+                result.AddError("Keyword must be minimum 3 character!");
+                return result;
+            }
+
+            result.Data = await _productRepository.FilterByKeyword(keyword);
+
+            return result;
+        }
+
+        public async Task<ServiceResult<IList<ProductModel>>> FilterStockQuantityRange(int minValue, int maxValue)
+        {
+            var result = new ServiceResult<IList<ProductModel>>();
+
+            if (minValue >= maxValue)
+            {
+                result.AddError("maxValue must be greater than minValue!");
+                return result;
+            }
+
+            result.Data = await _productRepository.FilterStockQuantityRange(minValue, maxValue);
 
             return result;
         }
